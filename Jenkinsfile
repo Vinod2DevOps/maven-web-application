@@ -6,7 +6,7 @@ def mavenHome = tool name: "maven3.8.4"
 properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), [$class: 'RebuildSettings', autoRebuild: false, rebuildDisabled: false], [$class: 'JobLocalConfiguration', changeReasonComment: ''], pipelineTriggers([pollSCM('* * * * *')])])
 
 stage('CheckoutCode'){
-git branch: 'development', credentialsId: '6d0a81d4-ee5f-4a9a-892b-250966d66c20', url: 'https://github.com/Vinod2DevOps/maven-web-application.git'
+git branch: 'development', credentialsId: '588bf710-9a90-4c3a-8b1b-d274270d6e44', url: 'https://github.com/Vinod2DevOps/maven-web-application.git'   
 }
 stage('Build'){
 sh "${mavenHome}/bin/mvn clean package"
